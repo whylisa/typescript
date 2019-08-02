@@ -1,0 +1,14 @@
+let sym1 = Symbol()
+let sym2 = Symbol("key")
+let sym = Symbol()
+let obj = {
+  [sym]: "value"
+}
+const getClassNameSymbol = Symbol()
+class C {
+  [getClassNameSymbol]() {
+    return "C"
+  }
+}
+let C = new C ()
+let className = c[getClassNameSymbol]()
