@@ -71,13 +71,25 @@ export interface Axios {
 	get<T = any>(url: string,config?: AxiosRequestConfig): AxiosPromise<T>
 	delete<T = any>(url:string,config?: AxiosRequestConfig): AxiosPromise<T>
 	head<T = any>(url: string,config?: AxiosRequestConfig): AxiosPromise<T>
-	options<T = any>(url:string, config?: AxiosRequestConfig): AxiosPromise<>
+	options<T = any>(url:string, config?: AxiosRequestConfig): AxiosPromise<T>
+	put
+	petch
+}
+export interface AxiosInstance extends Axios{
+	<T = any>(config: AxiosRequestConfig): AxiosPromise<T>
+	<T = any>(url: string,config ?: AxiosRequestConfig): AxiosPromise<T>
 }
 
+export interface AxiosInterceptorManager<T> {
+	use(resolved: ResolvedFn<T>,rejected?: RejecteFn): number
+}
 
-
-
-
+export interface ResolveFn<T> {
+	(val: T): T | Promise<T>
+}
+export interface RejectedFn {
+	(error: any):any
+}
 
 
 
