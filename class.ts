@@ -19,3 +19,17 @@ function greeting (person: Person) {
 }
 
 let user = new User('yee', 'Huang')
+
+class User {
+	fullName: string
+	firstName: string
+	lastName: string
+	constructor(firstName: string,lastName: string) {
+		this.firstName = firstName
+		this.lastName = lastName
+		this.fullName = firstName + lastName
+	}
+}
+interface Person {
+	firstName
+}
