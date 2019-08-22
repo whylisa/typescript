@@ -16,3 +16,8 @@ function loggingIdentity<T>(arg: T): T {
 	return arg
 }
 
+let myIdentity: {<T>(arg: T): T} = identity
+
+interface GenericIdentityFn {
+	<T>(arg: T): T
+}
