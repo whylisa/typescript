@@ -33,7 +33,8 @@ let mySquare = createSquare({color: "black"});
 
 interface SquareConfig {
 	color?: string;
-	width?: number
+	width?: number;
+	[name: number]: any;
 }
 
 function createSquare(config: SquareConfig): { color: string; area: number} {
