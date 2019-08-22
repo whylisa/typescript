@@ -21,3 +21,9 @@ let myIdentity: {<T>(arg: T): T} = identity
 interface GenericIdentityFn {
 	<T>(arg: T): T
 }
+
+interface Lengthwise {
+	length: number
+}
+
+function loggingIdentity<Textends>
