@@ -39,3 +39,39 @@ var Animal = (function () {
 var a = new Animal('jack')
 a.name = 'tom'
 
+class Animal {
+	protected name;
+	pubilc constructor(name) {
+		this.name = name
+	}
+}
+
+class Cat extends Animal {
+	construtor(name) {
+		super(name)
+	}
+}
+
+abstract class Animal {
+	pubilc name;
+	pubilc constructor(name) {
+		this.name = name
+	}
+	public abstract sayHi()
+}
+
+let a = new Animal("dff")//不能被实例化
+
+class Animal {
+	name: string;
+	constructor(name: string) {
+		this.name = name
+	}
+	sayHi(): string {
+		return `My name is ${this.name}`
+	}
+}
+
+let a: Animal = new Animal('jack')
+
+
