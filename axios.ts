@@ -381,7 +381,10 @@ export function extend<T,U>(to:T,from: U):T & U {
 	return to as T & U 
 }
 
-
+export interface AxiosRequestConfig {
+	url: string;
+	
+}
 
 
 
