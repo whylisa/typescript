@@ -386,9 +386,17 @@ export interface AxiosRequestConfig {
 	
 }
 
+function axios(config: AxiosRequestConfig): AxiosPromise {
+	processConfig(config)
+	return xhr(config).then((res) => {
+		return transformRequstData(res)
+	})
+}
 
-
-
+function transformResponseData(res: AxiosResponse): AxiosRequest {
+	res.data = transformResponse(res.data)
+	return res
+}
 
 
 
